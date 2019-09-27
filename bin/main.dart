@@ -25,3 +25,14 @@ main() {
 // Paul
 
 
+// Exercise 4: Create a function which takes a Link parameter and a String
+// parameter, and adds another link to the end of the chain.  The new link
+// value should be the String parameter passed into the function.typedef
+
+
+// *** Stretch ****
+// Exercise 5: Create a function called insert which takes a Link,
+// an integer index and a String, and inserts a link at the given index
+// in the chain.  For example, calling insert(firstLink, 2, "A") should
+// update the chain structure to look like this:
+// https://s1.whiteboardfox.com/s/77ff03ee231f2f60.png
