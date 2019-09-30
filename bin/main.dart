@@ -7,12 +7,20 @@
 // like this:
 // https://s1.whiteboardfox.com/s/2ae37dc832647bad.png
 
-
-
+class Link{
+String value;
+Link next;
+}
 
 main() {
+  Link firstLink = Link();
   // Exercise 2:  Create the object structure shown in the above link
   // including the variable called 'firstLink'
+  firstLink.value = 'Raj';
+  firstLink.next = Link();
+  firstLink.next.value = 'Makiko';
+  firstLink.next.next = Link();
+  firstLink.next.next.value = 'Paul';
 
 }
 
