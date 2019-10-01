@@ -7,12 +7,20 @@
 // like this:
 // https://s1.whiteboardfox.com/s/2ae37dc832647bad.png
 
-class Link{
-String value;
-Link next;
+class Link {
+  String value;
+  Link next;
+}
+
+class Student {
+  String name;
+  int score;
 }
 
 main() {
+  Student student1 = Student();
+  student1.name = 'Raj';
+  student1.score = 60;
   Link firstLink = Link();
   // Exercise 2:  Create the object structure shown in the above link
   // including the variable called 'firstLink'
@@ -21,9 +29,11 @@ main() {
   firstLink.next.value = 'Makiko';
   firstLink.next.next = Link();
   firstLink.next.next.value = 'Paul';
-
+  firstLink.next.next.next = null;
+  extractor(firstLink);
+  add(firstLink, 'rahul');
+  extractor(firstLink);
 }
-
 
 // Exercise 3: Create a function which takes a Link parameter and prints out
 // all the values in the list.  For example, if the function is given the
@@ -31,12 +41,31 @@ main() {
 // Raj
 // Makiko
 // Paul
+void extractor(Link link) {
+  Link temp = link;
+  List<String> values = [];
+  while (temp != null) {
+    values.add(temp.value);
+    temp = temp.next;
+  }
 
+  for (String x in values) {
+    print(x);
+  }
+}
 
 // Exercise 4: Create a function which takes a Link parameter and a String
 // parameter, and adds another link to the end of the chain.  The new link
 // value should be the String parameter passed into the function.typedef
+void add(Link link, String str) {
+  Link temp = link;
 
+  while (temp.next != null) {
+    temp = temp.next;
+  }
+  temp.next = Link();
+  temp.next.value = str;
+}
 
 // *** Stretch ****
 // Exercise 5: Create a function called insert which takes a Link,
